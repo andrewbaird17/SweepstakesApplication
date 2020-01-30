@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 namespace SweepstakesProject
 {
     class Sweepstakes
-    {
+    {   // USE DICTIONARY DATA STRUCTURE
+
         //Member Variables (HAS A)
         string name;
 
@@ -22,7 +23,7 @@ namespace SweepstakesProject
         {
 
         }
-        void PrintContestantIfo(Contestant contestant)
+        void PrintContestantInfo(Contestant contestant)
         {
 
         }
