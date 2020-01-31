@@ -22,19 +22,10 @@ namespace SweepstakesProject
             Sweepstakes sweepstake = new Sweepstakes(UserInterface.GetUserInputFor("What is the name of this sweepstakes?"));
             //Add Sweepstake to manager
             _manager.InsertSweepstakes(sweepstake);
-            //Run Sweepstake
-            RunSweepstake(sweepstake);
-            //GetSweepstake
-            do
-            {
-                _manager.GetSweepstakes();
-            }
-            while (sweepstake.Name == UserInterface.GetUserInputFor("Retrieve Which Sweepstake?"));
-            
-            // Notify Contestants that a winner was picked 
         }
-        public Contestant RunSweepstake(Sweepstakes sweepstakes)
+        public Contestant RunSweepstake()
         {
+            Sweepstakes sweepstakes = _manager.GetSweepstakes();
             do
             {
                 Contestant newContestant;
@@ -44,6 +35,5 @@ namespace SweepstakesProject
             while (UserInterface.GetUserInputFor("Keep sweepstakes open?") != "no");
             return sweepstakes.PickWinner();
         }
-
     }
 }
