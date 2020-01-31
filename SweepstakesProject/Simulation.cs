@@ -15,8 +15,7 @@ namespace SweepstakesProject
         //Member Methods (CAN DO)
         public void CreateMarketingFirmWithManager()
         {
-            Console.WriteLine("Choose how to run your Sweepstakes: Stack or Queue");
-            switch (Console.ReadLine().ToLower())
+            switch (UserInterface.GetUserInputFor("Choose how to run your Sweepstakes: Stack or Queue").ToLower())
             {
                 case "stack":
                     MarketingFirm firmStack = new MarketingFirm();
