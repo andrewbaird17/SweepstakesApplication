@@ -29,17 +29,19 @@ namespace SweepstakesProject
         }
 
         //Member Methods (CAN DO)
-        void RegisterContestant(Contestant contestant)
+        public void RegisterContestant(Contestant contestant)
         {
-            // Use UserInterface to get info to pass to Contestant Class
             contestant.registrationNum = (contestants.Count) + 1;
             contestants.Add( contestant.registrationNum, contestant);
         }
-        void PrintContestantInfo(Contestant contestant)
+        public void PrintContestantInfo(Contestant contestant)
         {
-
+            Console.WriteLine($"First Name: {contestant.firstName}" +
+                $"Last Name: {contestant.lastName}" +
+                $"Email: {contestant.email}" +
+                $"Registration Number: {contestant.registrationNum}");
         }
-        Contestant PickWinner()
+        public Contestant PickWinner()
         {
             Random random = new Random();
             Contestant randomWinner;
