@@ -40,7 +40,8 @@ namespace SweepstakesProject
         }
         public void EmailContestants()
         {
-            foreach (KeyValuePair<int,Contestant> contestant in Sweepstakes.contestants)
+            // take the sweepstakes that was pulled off and notify contestants with a message of win or loss
+            foreach (KeyValuePair<int,Contestant> contestant in sweepstakes.contestants)
             {
                 if (contestant == winningContestant)
                 {
@@ -48,7 +49,7 @@ namespace SweepstakesProject
                 }
                 else
                 {
-                    contestant.Notify();
+                    contestant.Notify("You did not win.");
                 }
                 
             }

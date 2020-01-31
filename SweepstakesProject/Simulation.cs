@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SweepstakesProject
 {
-    class Simulation
+    public class Simulation
     {
         //Member Variables (HAS A)
 

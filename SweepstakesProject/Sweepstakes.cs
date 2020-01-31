@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SweepstakesProject
 {
-    public class Sweepstakes
+    public class Sweepstakes : INotify
     {
         //Member Variables (HAS A)
         // USE DICTIONARY DATA STRUCTURE
@@ -49,6 +49,10 @@ namespace SweepstakesProject
             int randNum = random.Next(0, (contestants.Count) + 1);
             randomWinner = contestants[randNum];
             return randomWinner;
+        }
+        public void Notify(string message)
+        {
+
         }
     }
 }
