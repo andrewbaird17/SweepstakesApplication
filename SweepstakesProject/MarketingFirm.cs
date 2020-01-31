@@ -30,7 +30,6 @@ namespace SweepstakesProject
             int contestants = 0;
             do
             {
-               
                 Contestant newContestant;
                 sweepstakes.RegisterContestant(newContestant = new Contestant(UserInterface.GetUserInputFor("Enter First Name: "), UserInterface.GetUserInputFor("Enter Last Name:"), UserInterface.GetUserInputFor("Enter Email:")));
                 sweepstakes.PrintContestantInfo(newContestant);
@@ -38,6 +37,21 @@ namespace SweepstakesProject
             }
             while (contestantsMax != contestants);
             return sweepstakes.PickWinner();
+        }
+        public void EmailContestants()
+        {
+            foreach (KeyValuePair<int,Contestant> contestant in Sweepstakes.contestants)
+            {
+                if (contestant == winningContestant)
+                {
+                    contestant.Notify("You have won!");
+                }
+                else
+                {
+                    contestant.Notify();
+                }
+                
+            }
         }
     }
 }
