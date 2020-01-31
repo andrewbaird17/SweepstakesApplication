@@ -26,13 +26,17 @@ namespace SweepstakesProject
         public Contestant RunSweepstake()
         {
             Sweepstakes sweepstakes = _manager.GetSweepstakes();
+            Int32.TryParse(UserInterface.GetUserInputFor("How many contestants are allowed?"), out int contestantsMax);
+            int contestants = 0;
             do
             {
+               
                 Contestant newContestant;
                 sweepstakes.RegisterContestant(newContestant = new Contestant(UserInterface.GetUserInputFor("Enter First Name: "), UserInterface.GetUserInputFor("Enter Last Name:"), UserInterface.GetUserInputFor("Enter Email:")));
                 sweepstakes.PrintContestantInfo(newContestant);
+                contestants++;
             }
-            while (UserInterface.GetUserInputFor("Keep sweepstakes open?") != "no");
+            while (contestantsMax != contestants);
             return sweepstakes.PickWinner();
         }
     }
