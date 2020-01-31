@@ -9,10 +9,10 @@ namespace SweepstakesProject
     public class Contestant
     {
         //Member Variables (HAS A)
-        string firstName;
-        string lastName;
-        string email;
-        int registrationNum;
+        public string firstName;
+        public string lastName;
+        public string email;
+        public int registrationNum;
 
         //Constructor
         public Contestant(string firstName, string lastName, string email, int registrationNum)

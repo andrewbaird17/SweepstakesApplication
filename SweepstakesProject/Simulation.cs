@@ -25,7 +25,6 @@ namespace SweepstakesProject
                     break;
                 default:
                     throw new Exception("Not a valid option");
-                    break;
             }
         }
 
