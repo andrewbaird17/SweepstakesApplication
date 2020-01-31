@@ -6,11 +6,17 @@ using System.Threading.Tasks;
 
 namespace SweepstakesProject
 {
-    public static class UserInterface
+    class Simulation
     {
-        public static string GetUserInputFor(string prompt)
+        //Member Variables (HAS A)
+
+        //Constructor
+
+        //Member Methods (CAN DO)
+        public void CreateMarketingFirmWithManager()
         {
-            return prompt;
+
         }
+
     }
 }
