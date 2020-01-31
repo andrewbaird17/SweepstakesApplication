@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SweepstakesProject
 {
-    class Sweepstakes
+    public class Sweepstakes
     {   // USE DICTIONARY DATA STRUCTURE
 
         //Member Variables (HAS A)
