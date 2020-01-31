@@ -16,11 +16,11 @@ namespace SweepstakesProject
         //Member Methods (CAN DO)
         public void InsertSweepstakes(Sweepstakes sweepstakes)
         {
-            
+            stack.Push(sweepstakes);
         }
         public Sweepstakes GetSweepstakes()
         {
-
+            return stack.Pop();
         }
     }
 }

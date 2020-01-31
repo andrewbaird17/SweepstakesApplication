@@ -33,7 +33,7 @@ namespace SweepstakesProject
         {
             // Use UserInterface to get info to pass to Contestant Class
             contestant.registrationNum = (contestants.Count) + 1;
-            contestants.Add( , contestant);
+            contestants.Add( contestant.registrationNum, contestant);
         }
         void PrintContestantInfo(Contestant contestant)
         {
