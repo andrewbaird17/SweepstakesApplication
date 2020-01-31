@@ -13,7 +13,7 @@ namespace SweepstakesProject
         //Constructor
         public MarketingFirm(ISweepstakesManager manager)
         {
-
+            this._manager = manager;
         }
         //Member Methods (CAN DO)
         public void CreateSweepstake()

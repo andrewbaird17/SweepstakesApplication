@@ -18,10 +18,12 @@ namespace SweepstakesProject
             switch (UserInterface.GetUserInputFor("Choose how to run your Sweepstakes: Stack or Queue").ToLower())
             {
                 case "stack":
-                    MarketingFirm firmStack = new MarketingFirm();
+                    SweepstakesStackManager stack = new SweepstakesStackManager();
+                    MarketingFirm firmStack = new MarketingFirm(stack);
                     break;
                 case "queue":
-                    MarketingFirm firmQueue = new MarketingFirm();
+                    SweepstakesQueueManager queue = new SweepstakesQueueManager();
+                    MarketingFirm firmQueue = new MarketingFirm(queue);
                     break;
                 default:
                     throw new Exception("Not a valid option");
