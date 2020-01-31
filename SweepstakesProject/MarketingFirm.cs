@@ -16,6 +16,11 @@ namespace SweepstakesProject
             this._manager = manager;
         }
         //Member Methods (CAN DO)
+        public void RunMarketingFirm()
+        {
+            CreateSweepstake();
+            
+        }
         public void CreateSweepstake()
         {
             Sweepstakes sweepstakes = new Sweepstakes(UserInterface.GetUserInputFor("What is the name of this sweepstakes?"));

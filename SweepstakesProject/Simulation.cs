@@ -28,6 +28,7 @@ namespace SweepstakesProject
                     throw new Exception("Not a valid option");
             }
             MarketingFirm firm = new MarketingFirm(manager);
+            firm.RunMarketingFirm();
         }
 
     }
