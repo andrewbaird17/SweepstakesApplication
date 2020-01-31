@@ -18,7 +18,7 @@ namespace SweepstakesProject
         //Member Methods (CAN DO)
         public void CreateSweepstake()
         {
-
+            Sweepstakes sweepstakes = new Sweepstakes(UserInterface.GetUserInputFor("What is the name of this sweepstakes?"));
         }
 
     }

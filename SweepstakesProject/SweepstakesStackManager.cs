@@ -16,10 +16,11 @@ namespace SweepstakesProject
         //Member Methods (CAN DO)
         public void InsertSweepstakes(Sweepstakes sweepstakes)
         {
-
+            
         }
         public Sweepstakes GetSweepstakes()
         {
+
         }
     }
 }
