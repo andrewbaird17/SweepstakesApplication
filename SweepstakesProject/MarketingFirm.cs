@@ -38,7 +38,7 @@ namespace SweepstakesProject
             }
             while (contestantsMax != contestants);
             winner = sweepstakes.PickWinner();
-            sweepstakes.EmailContestants(winner);
+            sweepstakes.EmailContestants(winner,sweepstakes);
             return winner;
         }
     }

@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MailKit.Net.Smtp;
+using MimeKit;
 
 namespace SweepstakesProject
 {
-    public class Sweepstakes 
+    public class Sweepstakes
     {
         //Member Variables (HAS A)
         // USE DICTIONARY DATA STRUCTURE
@@ -19,7 +21,6 @@ namespace SweepstakesProject
                 return name;
             }
         }
-        Contestant contestant;
 
         //Constructor
         public Sweepstakes(string name)
@@ -32,7 +33,7 @@ namespace SweepstakesProject
         public void RegisterContestant(Contestant contestant)
         {
             contestant.registrationNum = (contestants.Count) + 1;
-            contestants.Add( contestant.registrationNum, contestant);
+            contestants.Add(contestant.registrationNum, contestant);
         }
         public void PrintContestantInfo(Contestant contestant)
         {
@@ -50,7 +51,7 @@ namespace SweepstakesProject
             randomWinner = contestants[randNum];
             return randomWinner;
         }
-        public void EmailContestants(Contestant winner)
+        public void EmailContestants(Contestant winner,Sweepstakes sweepstakes)
         {
             // take the sweepstakes that was pulled off and notify contestants with a message of win or loss
             foreach (KeyValuePair<int, Contestant> contestant in contestants)
@@ -59,12 +60,26 @@ namespace SweepstakesProject
                 {
                     contestant.Value.Notify($"Congratulations!!! {contestant.Value.firstName} {contestant.Value.lastName} You have won!!!" +
                         $" You will be contacted with additional details in an email.");
+                    EmailWinner(winner,sweepstakes);
                 }
                 else
                 {
                     contestant.Value.Notify($"{contestant.Value.firstName} {contestant.Value.lastName} you did not win. Better luck next time!");
                 }
             }
+        }
+        public void EmailWinner(Contestant winner, Sweepstakes sweepstakes)
+        {
+            var message = new MimeMessage();
+
+            message.From.Add(new MailboxAddress(winner.firstName, winner.email));
+            message.To.Add(new MailboxAddress("Andrew", "alice@wonderland.com"));
+            message.Subject = $"Congratulations!!";
+
+            message.Body = new TextPart("plain")
+            {
+                Text = $"You have won {sweepstakes.Name}"
+            };
         }
     }
 }
