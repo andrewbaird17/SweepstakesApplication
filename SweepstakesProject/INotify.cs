@@ -8,6 +8,6 @@ namespace SweepstakesProject
 {
     public interface INotify
     {
-        void Notify();
+        void Notify(string message);
     }
 }

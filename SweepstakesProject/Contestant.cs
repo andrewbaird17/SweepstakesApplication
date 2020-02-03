@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SweepstakesProject
 {
-    public class Contestant
+    public class Contestant : INotify
     {
         //Member Variables (HAS A)
         public string firstName;
@@ -22,5 +22,10 @@ namespace SweepstakesProject
             this.email = email;
         }
         //Member Methods (CAN DO)
+
+        public void Notify(string message)
+        {
+            Console.WriteLine(message);
+        }
     }
 }

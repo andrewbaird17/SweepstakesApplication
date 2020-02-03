@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SweepstakesProject
 {
-    public class Sweepstakes : INotify
+    public class Sweepstakes 
     {
         //Member Variables (HAS A)
         // USE DICTIONARY DATA STRUCTURE
@@ -50,9 +50,21 @@ namespace SweepstakesProject
             randomWinner = contestants[randNum];
             return randomWinner;
         }
-        public void Notify(string message)
+        public void EmailContestants(Contestant winner)
         {
+            // take the sweepstakes that was pulled off and notify contestants with a message of win or loss
+            foreach (KeyValuePair<int, Contestant> contestant in contestants)
+            {
+                if (contestant.Value == winner)
+                {
+                    contestant.Value.Notify("You have won!");
+                }
+                else
+                {
+                    contestant.Value.Notify("You did not win.");
+                }
 
+            }
         }
     }
 }

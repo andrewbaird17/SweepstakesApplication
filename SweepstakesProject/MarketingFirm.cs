@@ -38,21 +38,9 @@ namespace SweepstakesProject
             while (contestantsMax != contestants);
             return sweepstakes.PickWinner();
         }
-        public void EmailContestants()
+        public void Email(Contestant winner)
         {
-            // take the sweepstakes that was pulled off and notify contestants with a message of win or loss
-            foreach (KeyValuePair<int,Contestant> contestant in sweepstakes.contestants)
-            {
-                if (contestant == winningContestant)
-                {
-                    contestant.Notify("You have won!");
-                }
-                else
-                {
-                    contestant.Notify("You did not win.");
-                }
-                
-            }
+            sweepstakes.EmailContestants(winner);
         }
     }
 }

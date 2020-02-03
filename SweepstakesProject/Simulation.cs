@@ -29,7 +29,8 @@ namespace SweepstakesProject
             }
             MarketingFirm firm = new MarketingFirm(manager);
             firm.CreateSweepstake();
-            firm.RunSweepstake();
+            Contestant winner = firm.RunSweepstake();
+            firm.Email(winner);
 
         }
 
