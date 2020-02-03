@@ -57,11 +57,12 @@ namespace SweepstakesProject
             {
                 if (contestant.Value == winner)
                 {
-                    contestant.Value.Notify("You have won!");
+                    contestant.Value.Notify($"Congratulations!!! {contestant.Value.firstName} {contestant.Value.lastName} You have won!!!" +
+                        $" You will be contacted with additional details in an email.");
                 }
                 else
                 {
-                    contestant.Value.Notify("You did not win.");
+                    contestant.Value.Notify($"{contestant.Value.firstName} {contestant.Value.lastName} you did not win. Better luck next time!");
                 }
             }
         }
