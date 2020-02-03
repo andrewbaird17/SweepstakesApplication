@@ -73,13 +73,32 @@ namespace SweepstakesProject
             var message = new MimeMessage();
 
             message.From.Add(new MailboxAddress(winner.firstName, winner.email));
-            message.To.Add(new MailboxAddress("Andrew", "alice@wonderland.com"));
+            message.To.Add(new MailboxAddress("Andrew", "andrewflamingo@gmail.com"));
             message.Subject = $"Congratulations!!";
 
             message.Body = new TextPart("plain")
             {
-                Text = $"You have won {sweepstakes.Name}"
+                Text = $@"You have won the {sweepstakes.Name}! Welcome to winnerhood, one of the perks is a new flamingo!
+                    We will stay in touch to arrange delivery of your flamingo.
+                    Congratulations again!
+                    -Andrew"
             };
+
+            try
+            {
+                var client = new SmtpClient();
+                {
+                    client.Connect("smtp.gmail.com", 587, SecureSocketOptions.Auto);
+                    client.Authenticate(_settings.Value.Email, _settings.Value.Password);
+                    client.Send(message);
+                    client.Disconnect(true);
+                }
+            }
+            catch (Exception ex) //todo add another try to send email
+            {
+                var e = ex;
+                throw;
+            }
         }
     }
 }
