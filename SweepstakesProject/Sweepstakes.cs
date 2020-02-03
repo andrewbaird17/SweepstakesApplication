@@ -88,13 +88,13 @@ namespace SweepstakesProject
             {
                 var client = new SmtpClient();
                 {
-                    client.Connect("smtp.gmail.com", 587, SecureSocketOptions.Auto);
-                    client.Authenticate(_settings.Value.Email, _settings.Value.Password);
+                    client.Connect("smtp.gmail.com", 587, MailKit.Security.SecureSocketOptions.Auto);
+                    client.Authenticate("andrewflamingo@gmail.com", "mypassword");
                     client.Send(message);
                     client.Disconnect(true);
                 }
             }
-            catch (Exception ex) //todo add another try to send email
+            catch (Exception ex) 
             {
                 var e = ex;
                 throw;
