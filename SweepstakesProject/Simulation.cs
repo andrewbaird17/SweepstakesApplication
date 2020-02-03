@@ -19,9 +19,11 @@ namespace SweepstakesProject
             switch (UserInterface.GetUserInputFor("Choose how to run your Sweepstakes: Stack or Queue").ToLower())
             {
                 case "stack":
+                case "1":
                     manager = new SweepstakesStackManager();
                     break;
                 case "queue":
+                case "2":
                     manager = new SweepstakesQueueManager();
                     break;
                 default:
