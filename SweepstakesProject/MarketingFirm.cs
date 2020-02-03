@@ -26,6 +26,7 @@ namespace SweepstakesProject
         public Contestant RunSweepstake()
         {
             Sweepstakes sweepstakes = _manager.GetSweepstakes();
+            Contestant winner;
             Int32.TryParse(UserInterface.GetUserInputFor("How many contestants are allowed?"), out int contestantsMax);
             int contestants = 0;
             do
@@ -36,11 +37,9 @@ namespace SweepstakesProject
                 contestants++;
             }
             while (contestantsMax != contestants);
-            return sweepstakes.PickWinner();
-        }
-        public void Email(Contestant winner)
-        {
+            winner = sweepstakes.PickWinner();
             sweepstakes.EmailContestants(winner);
+            return winner;
         }
     }
 }

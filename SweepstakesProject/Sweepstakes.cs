@@ -63,7 +63,6 @@ namespace SweepstakesProject
                 {
                     contestant.Value.Notify("You did not win.");
                 }
-
             }
         }
     }
