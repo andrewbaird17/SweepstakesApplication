@@ -21,8 +21,8 @@ namespace SweepstakesProject
             this.lastName = lastName;
             this.email = email;
         }
-        //Member Methods (CAN DO)
 
+        //Member Methods (CAN DO)
         public void Notify(string message)
         {
             Console.WriteLine(message);

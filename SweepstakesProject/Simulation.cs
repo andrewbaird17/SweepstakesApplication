@@ -31,6 +31,5 @@ namespace SweepstakesProject
             firm.CreateSweepstake();
             firm.RunSweepstake();
         }
-
     }
 }
